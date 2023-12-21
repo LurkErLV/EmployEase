@@ -12,16 +12,15 @@ datasource db {
 }
 
 model User {
-  id        Int         @id @default(autoincrement())
-  email     String      @unique
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
   password  String
   name      String?
   surname   String?
-  Role      Role        @default(Employee)
-  vacancies Vacancies[]
-  applies   String      @default("[]")
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @default(now()) @updatedAt
+  Role      Role     @default(Employee)
+  applies   String   @default("[]")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }
 
 model Vacancies {
@@ -29,7 +28,7 @@ model Vacancies {
 
   title        String
   company      String
-  companyLogo  String
+  companyLogo  String?
   workSchedule WorkSchedule
   minSalary    Int
   maxSalary    Int
@@ -39,7 +38,6 @@ model Vacancies {
   experience   String
   description  String
 
-  author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
