@@ -2,8 +2,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 import prisma from "@/utils/db";
 import bcrypt from "bcrypt";
 
-export default async function POST(req: NextApiRequest,
-                                   res: NextApiResponse,) {
+export default async function handler(req: NextApiRequest,
+                                      res: NextApiResponse) {
     const data = req.body;
 
     if (!data || !data.email || !data.password) {

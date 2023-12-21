@@ -20,13 +20,17 @@ model User {
   Role      Role        @default(Employee)
   vacancies Vacancies[]
   applies   String      @default("[]")
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now()) @updatedAt
 }
 
 model Vacancies {
-  id       Int    @id @default(autoincrement())
-  title    String
-  author   User   @relation(fields: [authorId], references: [id])
-  authorId Int
+  id        Int      @id @default(autoincrement())
+  title     String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }
 
 enum Role {
