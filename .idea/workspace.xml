@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/api/employers/vacancies/create.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20231221024839_/migration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/auth/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/register.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +76,7 @@
       <workItem from="1703020533801" duration="7576000" />
       <workItem from="1703104232855" duration="1510000" />
       <workItem from="1703106335115" duration="826000" />
-      <workItem from="1703107409206" duration="7525000" />
+      <workItem from="1703107409206" duration="8499000" />
     </task>
     <servers />
   </component>
