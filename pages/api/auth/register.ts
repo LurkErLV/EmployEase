@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest,
     const data = req.body;
 
     if (!data || !data.email || !data.password) {
-        res.status(400).send("Missing required parameter");
+        return res.status(400).send("Missing required parameter");
     }
 
     const user = await prisma.user.findFirst({
@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest,
     });
 
     if (user) {
-        res.status(422).send("Email already used");
+        return res.status(422).send("Email already used");
     }
 
     const newUser = await prisma.user.create({
