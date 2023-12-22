@@ -45,6 +45,6 @@ export default async function (req: NextApiRequest,
             authorId: parseInt(session.user.id)
         }
     });
-    
+
     return res.status(200).end();
 }
