@@ -1,16 +1,16 @@
 /*
   Warnings:
 
-  - Added the required column `company` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `companyLogo` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `description` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `education` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `experience` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `jobLevel` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `location` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `maxSalary` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `minSalary` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `workSchedule` to the `Vacancies` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `company` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `companyLogo` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `description` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `education` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `experience` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `jobLevel` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `location` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `maxSalary` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `minSalary` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
+  - Added the required column `workSchedule` to the `Vacancies` table without page default value. This is not possible if the table is not empty.
 
 */
 -- AlterTable
