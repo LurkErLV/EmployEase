@@ -1,6 +1,6 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import prisma from "@/utils/db";
-import bcrypt from "bcrypt";
+import {hash} from "bcryptjs";
 
 export default async function handler(req: NextApiRequest,
                                       res: NextApiResponse) {
@@ -14,6 +14,8 @@ export default async function handler(req: NextApiRequest,
         where: {
             email: data.email
         }
+    }).finally(() => {
+        prisma.$disconnect()
     });
 
     if (user) {
@@ -23,10 +25,12 @@ export default async function handler(req: NextApiRequest,
     const newUser = await prisma.user.create({
         data: {
             email: data.email,
-            password: await bcrypt.hash(data.password, 10),
+            password: await hash(data.password, 10),
         }
     }).catch((_) => {
         return res.status(500);
+    }).finally(() => {
+        prisma.$disconnect()
     });
 
     return res.status(200).json(newUser);

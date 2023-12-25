@@ -1,20 +1,39 @@
-import {ReactNode} from "react";
-import {useSession} from "next-auth/react";
+"use client"
+
+import {signIn, signOut} from "next-auth/react";
+import Link from "next/link";
 
 type Props = {
-    type: string,
-    children: ReactNode,
+    type: string
 }
-export default function AuthButton(props: Props) {
-    if (!props) return;
-    const session = useSession();
-    console.log(session)
 
-    return (
-      <>
-        <button className="">
-            {session.status}
-        </button>
-      </>
-    );
+export default function AuthBtn(props: Props) {
+    let btn;
+
+    switch (props.type) {
+        case "signin": {
+            return btn = (
+                <button onClick={() => signIn()}
+                        className="text-white bg-blue-600 px-2 py-1.5 rounded transition hover:bg-opacity-40 hover:text-blue-600">
+                    Sign in
+                </button>
+            );
+        }
+        case "signout": {
+            return btn = (
+                <button onClick={() => signOut()}
+                        className="text-white bg-blue-600 px-2 py-1.5 rounded transition hover:bg-opacity-40 hover:text-blue-600">
+                    Sign Out
+                </button>
+            );
+        }
+        case "register": {
+            return btn = (
+                <Link href="/auth/register"
+                        className="text-white bg-blue-600 px-2 py-1.5 rounded transition hover:bg-opacity-40 hover:text-blue-600">
+                    Register
+                </Link>
+            );
+        }
+    }
 }

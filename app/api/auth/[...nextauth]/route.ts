@@ -1,7 +1,7 @@
 import NextAuth, {AuthOptions} from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/utils/db";
-import {compare} from "bcrypt";
+import {compare} from "bcryptjs";
 
 export const authOptions = {
     secret: process.env.AUTH_SECRET,
@@ -45,7 +45,8 @@ export const authOptions = {
         })
     ],
     pages: {
-        //signIn: `${process.env.BASE_PATH}/login`,
+        signIn: `${process.env.BASE_PATH}/auth/signin`,
+        newUser: process.env.BASE_PATH,
     },
     callbacks: {
         async jwt({token}: any) {
@@ -76,4 +77,5 @@ export const authOptions = {
     },
 } as AuthOptions;
 
-export default NextAuth(authOptions)
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };
