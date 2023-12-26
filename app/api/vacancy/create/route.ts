@@ -1,14 +1,15 @@
-import {NextApiRequest, NextApiResponse} from "next";
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import prisma from "@/utils/db";
+import {authOptions} from "@/utils/authOptions";
+import {NextRequest, NextResponse} from "next/server";
+import {NextApiRequest, NextApiResponse} from "next";
 
-export default async function (req: NextApiRequest,
-                               res: NextApiResponse) {
-    const session = await getServerSession(req, res, authOptions)
-    if (!session) return res.status(403).end();
-    if (session.user.role.toString() !== "Employer" || session.user.role.toString() !== "Admin") {
-        return res.status(403).end();
+export async function POST(req: Request, res: NextApiResponse) {
+    // @ts-ignore
+    const session = await getServerSession(authOptions);
+    if (!session) return NextResponse.json({message: "Access Restricted"}, {status: 403});
+    if (session.user.role.toString() !== "Employer" && session.user.role.toString() !== "Admin") {
+        return NextResponse.json({message: "Access Restricted"}, {status: 403});
     }
 
     const {
@@ -23,10 +24,11 @@ export default async function (req: NextApiRequest,
         jobLevel,
         experience,
         description
-    } = req.body;
+    } = await req.json();
+
 
     if (!title || !company || !workSchedule || !minSalary || !maxSalary || !location || !education || !jobLevel || !experience || !description) {
-        return res.status(400).send("Missing required parameter");
+        return NextResponse.json({message: "Missing required parameter"}, {status: 400});
     }
 
     await prisma.vacancies.create({
@@ -46,5 +48,5 @@ export default async function (req: NextApiRequest,
         }
     });
 
-    return res.status(200).end();
+    return NextResponse.json({}, {status: 200});
 }

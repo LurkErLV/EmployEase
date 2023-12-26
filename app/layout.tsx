@@ -5,8 +5,7 @@ import {ToastContainer} from "react-toastify";
 import Navbar from "@/app/components/Navbar";
 import NextAuthProvider from "@/app/components/client/NextAuthProvider";
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-
+import {authOptions} from "@/utils/authOptions";
 const inter = Inter({subsets: ['latin']})
 
 export default async function RootLayout({children}: { children: React.ReactNode }) {
@@ -20,6 +19,9 @@ export default async function RootLayout({children}: { children: React.ReactNode
             <NextAuthProvider>
                 <Navbar session={session}/>
                 {children}
+                <footer>
+                    test footer
+                </footer>
             </NextAuthProvider>
         </div>
         </body>
