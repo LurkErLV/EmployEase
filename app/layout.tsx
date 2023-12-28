@@ -6,6 +6,7 @@ import Navbar from "@/app/components/Navbar";
 import NextAuthProvider from "@/app/components/client/NextAuthProvider";
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/utils/authOptions";
+
 const inter = Inter({subsets: ['latin']})
 
 export default async function RootLayout({children}: { children: React.ReactNode }) {
@@ -18,7 +19,9 @@ export default async function RootLayout({children}: { children: React.ReactNode
         <div className="min-h-[100vh] flex flex-col justify-between">
             <NextAuthProvider>
                 <Navbar session={session}/>
-                {children}
+                <div className="pt-[64px]">
+                    {children}
+                </div>
                 <footer>
                     test footer
                 </footer>

@@ -1,16 +1,53 @@
-export default async function AllVacancies() {
-    const res = await fetch(`${process.env.BASE_PATH}/api/vacancy/getAll`);
+import VacancyCard from "@/app/components/server/VacancyCard";
+import VacancyFilter from "@/app/components/server/VacancyFilter";
+
+type Vacancy = {
+    id: number,
+    title: string,
+    company: string,
+    companyLogo: string,
+    workSchedule: string,
+    minSalary: number,
+    maxSalary: number,
+    location: string,
+    education: string,
+    jobLevel: string,
+    experience: string,
+    description: string,
+    authorId: number,
+    createdAt: string,
+    updatedAt: string
+}
+
+type Props = {
+    filter: boolean
+}
+
+export default async function AllVacancies({filter}: Props) {
+    const basePath = process.env.BASE_PATH;
+    const res = await fetch('http://192.168.1.163:3000/api/vacancy/getAll');
     const data = (await res.json()).allVacancies;
-    console.log(data)
+    let block;
+    if (filter) {
+        block = (
+            <>
+                <VacancyFilter vacancies={data}/>
+            </>
+        );
+    } else {
+        block = (
+            <>
+                {data && data.map((item: Vacancy) => (
+                    <VacancyCard key={item.id} item={item}/>
+                ))}
+            </>
+        );
+    }
 
     return (
         <>
-            <div className="w-full grid grid-cols-3 grid-rows-5 gap-6">
-                {data && data.map((item: any) => (
-                    <div className="max-w-[425px] w-full border-2 border-[#E4E5E8] rounded bg-white" key={item.id}>
-                        <p>{item.title}</p>
-                    </div>
-                ))}
+            <div className="w-full flex justify-center flex-wrap gap-3 ">
+                {block}
             </div>
         </>
     );

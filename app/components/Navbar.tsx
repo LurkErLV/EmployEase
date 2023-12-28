@@ -36,7 +36,7 @@ export default function Navbar(props: Props) {
     return (
         <>
             <nav
-                className={`max-md:h-auto fixed z-10 w-full h-[64px] flex justify-center items-center transition duration-500 ${isTop ? "bg-black bg-opacity-80" : "bg-[#1A1532]"}`}>
+                className={`fixed z-10 w-full h-[64px] flex justify-center items-center transition duration-500 ${isTop ? "bg-black bg-opacity-80" : "bg-[#1A1532]"}`}>
                 <div
                     className="relative max-md:flex-col max-md:my-5 w-full max-w-[1140px] mx-5 flex justify-between items-center transition">
                     <div className="max-md:flex max-md:justify-between max-md:w-full">
@@ -52,9 +52,9 @@ export default function Navbar(props: Props) {
                         </button>
                     </div>
                     <div
-                        className={`${isTop ? "max-md:bg-black max-md:bg-opacity-80" : "max-md:bg-[#1A1532]"} ${isOpen ? "max-md:translate-x-0" : "max-md:translate-x-[-100%]"} max-md:w-[100vw] max-md:duration-500 max-md:top-8 max-md:py-5 max-md:absolute max-md:flex-col max-md:my-5 flex items-center gap-5 transition`}>
+                        className={`${isTop ? "max-md:bg-black max-md:bg-opacity-80" : "max-md:bg-[#1A1532]"} ${isOpen ? "max-md:translate-x-0" : "max-md:translate-x-[-100%]"} max-md:w-[100vw] max-md:duration-500 max-md:top-7 max-md:py-5 max-md:absolute max-md:flex-col max-md:my-5 flex items-center gap-5 transition`}>
                         <Link className="hover:opacity-60 transition" href="/">Home</Link>
-                        <Link className="hover:opacity-60 transition" href="/">Vacancies</Link>
+                        <Link className="hover:opacity-60 transition" href="/vacancies">Vacancies</Link>
                         {session &&
                             <Link className="hover:opacity-60 transition" href="/">Profile</Link>
                         }
