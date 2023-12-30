@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 
 type Vacancy = {
     id: number,
@@ -48,8 +49,8 @@ export default function VacancyCard(props: Props) {
 
     return (
         <>
-            <div
-                className="max-w-[372px] min-w-[300px] w-full border-2 border-[#E4E5E8] rounded-md bg-white flex flex-col p-6">
+            <Link href={"/vacancies/" + props.item.id}
+                className="max-w-[372px] min-w-[300px] w-full border-2 border-[#E4E5E8] rounded-md bg-white flex flex-col p-6 hover:scale-110 transition">
                 <h1 className="text-gray-900 text-lg font-medium mb-1.5">{props.item.title}</h1>
                 <div className="flex gap-2 mb-5 max-sm:flex-col">
                     <p className="text-[#0BA02C] text-xs font-bold uppercase bg-[#E7F6EA] px-[8px] py-[4px] w-fit">{formatWorkSchedule(props.item.workSchedule)}</p>
@@ -80,7 +81,7 @@ export default function VacancyCard(props: Props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </>
     );
 }

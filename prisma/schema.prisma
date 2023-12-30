@@ -33,7 +33,7 @@ model Vacancies {
   minSalary    Int
   maxSalary    Int
   location     String
-  description  String
+  description  String       @db.VarChar(10000)
 
   authorId  Int
   createdAt DateTime @default(now())

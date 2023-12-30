@@ -86,7 +86,7 @@ export default function page() {
                 theme: "light",
             });
         }
-        await fetch('http://localhost:3000/api/vacancy/create', {
+        await fetch('http://192.168.1.163:3000/api/vacancy/create', {
             method: 'POST', body: JSON.stringify(formValues), headers: {
                 'content-type': 'application/json'
             }
