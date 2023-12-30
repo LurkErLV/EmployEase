@@ -20,18 +20,15 @@ export async function POST(req: Request, res: NextApiResponse) {
         minSalary,
         maxSalary,
         location,
-        education,
-        jobLevel,
-        experience,
         description
     } = await req.json();
 
 
-    if (!title || !company || !workSchedule || !minSalary || !maxSalary || !location || !education || !jobLevel || !experience || !description) {
+    if (!title || !company || !workSchedule || !minSalary || !maxSalary || !location || !description) {
         return NextResponse.json({message: "Missing required parameter"}, {status: 400});
     }
 
-    await prisma.vacancies.create({
+    const newVacancy = await prisma.vacancies.create({
         data: {
             title,
             company,
@@ -40,13 +37,10 @@ export async function POST(req: Request, res: NextApiResponse) {
             minSalary,
             maxSalary,
             location,
-            education,
-            jobLevel,
-            experience,
             description,
             authorId: parseInt(session.user.id)
         }
     });
 
-    return NextResponse.json({}, {status: 200});
+    return NextResponse.json({newVacancy}, {status: 200});
 }

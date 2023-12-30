@@ -58,7 +58,8 @@ export default function VacancyCard(props: Props) {
                 <div className="flex gap-3">
                     <div className="w-12 h-12 rounded bg-[#EDEFF5] flex justify-center items-center">
                         <Image
-                            src={props.item.companyLogo ? props.item.companyLogo : "https://placehold.co/48"} alt=""
+                            src={props.item.companyLogo.startsWith('http') || props.item.companyLogo.startsWith('https') ? props.item.companyLogo : "https://placehold.co/48"}
+                            alt=""
                             width={24} height={24}/>
                     </div>
                     <div className="h-full flex flex-col justify-between">

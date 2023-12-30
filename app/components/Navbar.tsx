@@ -60,7 +60,7 @@ export default function Navbar(props: Props) {
                         }
                         {session?.user.role === "Employer" || session?.user.role === "Admin" ?
                             <>
-                                <Link className="hover:opacity-60 transition" href="/">Create vacancy</Link>
+                                <Link className="hover:opacity-60 transition" href="/vacancies/create">Create vacancy</Link>
                             </>
                             :
                             <></>

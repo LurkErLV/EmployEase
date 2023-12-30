@@ -1,5 +1,5 @@
-import VacancyCard from "@/app/components/server/VacancyCard";
-import VacancyFilter from "@/app/components/server/VacancyFilter";
+import VacancyCard from "@/app/components/client/VacancyCard";
+import VacancyFilter from "@/app/components/client/VacancyFilter";
 
 type Vacancy = {
     id: number,
@@ -25,7 +25,7 @@ type Props = {
 
 export default async function AllVacancies({filter}: Props) {
     const basePath = process.env.BASE_PATH;
-    const res = await fetch('http://192.168.1.163:3000/api/vacancy/getAll');
+    const res = await fetch('http://localhost:3000/api/vacancy/getAll');
     const data = (await res.json()).allVacancies;
     let block;
     if (filter) {

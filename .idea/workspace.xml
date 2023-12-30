@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/server/VacancyCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/server/VacancyFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/vacancies/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules 2/tailwindcss/node_modules 2/glob-parent/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules 2/tailwindcss/node_modules 2/glob-parent/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules 2/tailwindcss/node_modules 2/glob-parent/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules 2/tailwindcss/node_modules 2/glob-parent/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20231228215414_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/types/vacancy.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vacancies/create/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/server/AllVacancies.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/server/AllVacancies.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/server/VacancyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/server/VacancyFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -81,11 +76,11 @@
       <recent name="$PROJECT_DIR$/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/components/server" />
       <recent name="$PROJECT_DIR$/app/components/client" />
       <recent name="$PROJECT_DIR$/app/api/vacancy/create" />
       <recent name="$PROJECT_DIR$/app/api/auth/register" />
       <recent name="$PROJECT_DIR$/app/api/vacancy" />
-      <recent name="$PROJECT_DIR$/app/api/auth" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -106,7 +101,7 @@
       <workItem from="1703557239483" duration="19563000" />
       <workItem from="1703634473682" duration="611000" />
       <workItem from="1703635624284" duration="6047000" />
-      <workItem from="1703679804024" duration="10124000" />
+      <workItem from="1703679804024" duration="27958000" />
     </task>
     <servers />
   </component>

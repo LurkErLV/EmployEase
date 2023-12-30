@@ -1,8 +1,8 @@
 "use client"
 
-import VacancyCard from "@/app/components/server/VacancyCard";
+import VacancyCard from "@/app/components/client/VacancyCard";
 import {Vacancy} from "@/types/vacancy";
-import {useState} from "react";
+import {ChangeEvent, ChangeEventHandler, useState} from "react";
 
 type Props = {
     vacancies: Vacancy[]
@@ -11,56 +11,50 @@ type Props = {
 export default function VacancyFilter(props: Props) {
     let vacancies: Vacancy[] = props.vacancies;
 
+    const [filter, setFilter] = useState({
+        title: "",
+        minSalary: 0,
+        maxSalary: 0,
+        company: "",
+        location: "",
+        workSchedule: ""
+    });
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement> | any) => {
+        const { name, value } = e.target;
+        setFilter(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
     const [filterOpen, setFilterOpen] = useState(false);
-    const [titleFilter, setTitleFilter] = useState("");
-    const [minSalaryFilter, setMinSalaryFilter] = useState(0);
-    const [maxSalaryFilter, setMaxSalaryFilter] = useState(0);
-    const [companyFilter, setCompanyFilter] = useState("");
-    const [locationFilter, setLocationFilter] = useState("");
-    const [workScheduleFilter, setWorkScheduleFilter] = useState("")
 
+    const filterVacancies = () => {
+        return vacancies.filter((item) => {
+            const titleMatch = !filter.title || item.title.toLowerCase().includes(filter.title.toLowerCase());
+            const minSalaryMatch = !filter.minSalary || item.maxSalary >= filter.minSalary;
+            const maxSalaryMatch = !filter.maxSalary || item.minSalary <= filter.maxSalary;
+            const companyMatch = !filter.company || item.company.toLowerCase().includes(filter.company.toLowerCase());
+            const locationMatch = !filter.location || item.location.toLowerCase().includes(filter.location.toLowerCase());
+            const workScheduleMatch = !filter.workSchedule || item.workSchedule.toLowerCase() === filter.workSchedule.toLowerCase();
 
-    if (titleFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.title.toLowerCase().includes(titleFilter.toLowerCase());
+            return titleMatch && minSalaryMatch && maxSalaryMatch && companyMatch && locationMatch && workScheduleMatch;
         });
-    }
-    if (minSalaryFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.maxSalary >= minSalaryFilter;
-        });
-    }
-    if (maxSalaryFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.minSalary <= maxSalaryFilter;
+    };
 
-        });
-    }
-    if (companyFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.company.toLowerCase().includes(companyFilter.toLowerCase());
-        });
-    }
-    if (locationFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.location.toLowerCase().includes(locationFilter.toLowerCase());
-        });
-    }
-    if (workScheduleFilter) {
-        vacancies = vacancies.filter((item) => {
-            return item.workSchedule.toLowerCase() === workScheduleFilter.toLowerCase();
-        });
-    }
+    const filteredVacancies = filterVacancies();
 
     return (
         <>
-            <input value={titleFilter} onChange={(e) => setTitleFilter(e.target.value)}
+            <input value={filter.title} onChange={handleChange}
+                   name="title"
                    placeholder="Position search"
                    className="w-full h-10 rounded mt-5 px-3" type="text"/>
             <button className="text-white py-3 px-5 bg-blue-800 rounded" onClick={() => setFilterOpen(true)}>Filter
             </button>
             <div className="w-full flex justify-center flex-wrap gap-3 ">
-                {vacancies && vacancies.map((item: Vacancy) => (
+                {filteredVacancies && filteredVacancies.map((item: Vacancy) => (
                     <VacancyCard key={item.id} item={item}/>
                 ))}
             </div>
@@ -75,32 +69,36 @@ export default function VacancyFilter(props: Props) {
                     <div className="flex flex-col gap-3 mt-5 w-10/12 mx-auto">
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-md font-medium">Min. Salary</p>
-                            <input value={minSalaryFilter}
-                                   onChange={(e) => e.target.value ? setMinSalaryFilter(parseInt(e.target.value)) : setMinSalaryFilter(0)}
+                            <input value={filter.minSalary}
+                                   onChange={handleChange}
+                                   name="minSalary"
                                    min="0" type="number"
                                    className="rounded p-1"/>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-md font-medium">Max. Salary</p>
-                            <input value={maxSalaryFilter}
-                                   onChange={(e) => e.target.value ? setMaxSalaryFilter(parseInt(e.target.value)) : setMaxSalaryFilter(0)}
+                            <input value={filter.maxSalary}
+                                   name="maxSalary"
+                                   onChange={handleChange}
                                    min="0" type="number" className="rounded p-1"/>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-md font-medium">Company</p>
-                            <input value={companyFilter}
-                                   onChange={(e) => setCompanyFilter(e.target.value)}
+                            <input value={filter.company}
+                                   name="company"
+                                   onChange={handleChange}
                                    type="text" className="rounded p-1"/>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-md font-medium">Location</p>
-                            <input value={locationFilter}
-                                   onChange={(e) => setLocationFilter(e.target.value)}
+                            <input value={filter.location}
+                                   name="location"
+                                   onChange={handleChange}
                                    type="text" className="rounded p-1"/>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white text-md font-medium">Work schedule</p>
-                            <select className="rounded p-1" onChange={(e) => setWorkScheduleFilter(e.target.value)}>
+                            <select className="rounded p-1" name="workSchedule" onChange={handleChange}>
                                 <option value="">None</option>
                                 <option value="FULLTIME">Full-Time</option>
                                 <option value="PARTTIME">Part-Time</option>

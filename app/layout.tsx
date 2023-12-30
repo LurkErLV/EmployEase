@@ -1,5 +1,7 @@
 import {Inter} from 'next/font/google'
 import './globals.css'
+import "react-quill/dist/quill.snow.css";
+import 'react-toastify/dist/ReactToastify.css';
 import React from "react";
 import {ToastContainer} from "react-toastify";
 import Navbar from "@/app/components/Navbar";
