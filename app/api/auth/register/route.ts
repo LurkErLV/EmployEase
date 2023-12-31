@@ -7,7 +7,8 @@ export async function POST(req: Request) {
     console.log(data)
     if (!data || !data.email || !data.password) {
         return NextResponse.json({
-            message: "Missing required parameter"
+            message: "Missing required parameter",
+            ok: false
         }, {
             status: 400,
         });
@@ -23,7 +24,8 @@ export async function POST(req: Request) {
 
     if (user) {
         return NextResponse.json({
-            message: "Email already used"
+            message: "Email already used",
+            ok: false
         }, {
             status: 422,
         });
@@ -35,13 +37,17 @@ export async function POST(req: Request) {
             password: await hash(data.password, 10),
         }
     }).catch((_) => {
-        return NextResponse.json({}, {status: 500});
+        return NextResponse.json({
+            message: "Server error",
+            ok: false
+        }, {status: 500});
     }).finally(() => {
         prisma.$disconnect();
     });
 
     return NextResponse.json({
-        message: newUser
+        message: newUser,
+        ok: true
     }, {
         status: 200,
     });

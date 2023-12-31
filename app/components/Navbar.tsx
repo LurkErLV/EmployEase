@@ -20,7 +20,7 @@ export default function Navbar(props: Props) {
             return (
                 <>
                     <AuthBtn type="signin"/>
-                    <AuthBtn type="route"/>
+                    <AuthBtn type="signup"/>
                 </>
             );
         } else {

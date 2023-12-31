@@ -5,7 +5,6 @@ import {NextRequest, NextResponse} from "next/server";
 import {NextApiRequest, NextApiResponse} from "next";
 
 export async function POST(req: Request, res: NextApiResponse) {
-    // @ts-ignore
     const session = await getServerSession(authOptions);
     if (!session) return NextResponse.json({message: "Access Restricted"}, {status: 403});
     if (session.user.role.toString() !== "Employer" && session.user.role.toString() !== "Admin") {

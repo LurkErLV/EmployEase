@@ -18,7 +18,6 @@ model User {
   name      String?
   surname   String?
   Role      Role     @default(Employee)
-  applies   String   @default("[]")
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }
@@ -38,6 +37,12 @@ model Vacancies {
   authorId  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
+}
+
+model Applies {
+  id        Int @id @default(autoincrement())
+  vacancyId Int
+  userId    Int
 }
 
 enum Role {

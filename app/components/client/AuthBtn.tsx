@@ -27,9 +27,9 @@ export default function AuthBtn(props: Props) {
                 </button>
             );
         }
-        case "route": {
+        case "signup": {
             return btn = (
-                <Link href="/auth/route"
+                <Link href="/auth/signup"
                         className="text-white bg-blue-600 px-2 py-1.5 rounded transition hover:bg-opacity-40 hover:text-blue-600">
                     Register
                 </Link>
