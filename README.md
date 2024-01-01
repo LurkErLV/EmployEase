@@ -1,6 +1,6 @@
 # Employease
 
-Employease is a web application that helps job seekers to find their dream job. It provides a platform for job seekers to search for jobs, apply for them, and track their application status. Employease also provides a platform for employers to post job openings and review applications.
+Hey there! Employease is my passion project—a web app designed to make job hunting way less stressful. It's like your personal job-search sidekick! This platform helps you find awesome job opportunities, apply to them hassle-free, and keep tabs on your application status. Plus, it's not just for us job seekers—I've also built a space for employers to post openings and check out applications.
 
 ## Installation
 
