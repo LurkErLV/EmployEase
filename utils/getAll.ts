@@ -1,6 +1,8 @@
-import {NextApiRequest, NextApiResponse} from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(req: NextApiRequest,
-                                      res: NextApiResponse) {
-    return res.status(200).send("All vacancies")
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  return res.status(200).send('All vacancies');
 }

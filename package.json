@@ -7,7 +7,9 @@
     "dev:network": "next dev -H 192.168.1.163",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@prisma/client": "^5.7.1",
@@ -32,6 +34,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
+    "prettier": "^3.1.1",
     "prisma": "^5.7.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"

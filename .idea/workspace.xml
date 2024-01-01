@@ -5,9 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/client/ApplyBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/register/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/getById/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/getById/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/AuthBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/AuthBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/NextAuthProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/NextAuthProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/VacancyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/VacancyFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/server/AllVacancies.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/server/AllVacancies.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vacancies/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/vacancies/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vacancies/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/vacancies/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vacancies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/vacancies/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/next-auth.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/vacancy.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/vacancy.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/authOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/authOptions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/getAll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/getAll.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +53,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -92,7 +128,7 @@
       <workItem from="1703634473682" duration="611000" />
       <workItem from="1703635624284" duration="6047000" />
       <workItem from="1703679804024" duration="44878000" />
-      <workItem from="1704144972751" duration="1160000" />
+      <workItem from="1704144972751" duration="4424000" />
     </task>
     <servers />
   </component>
