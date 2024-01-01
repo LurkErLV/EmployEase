@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/auth/signup/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20231230224237_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/register.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/register/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/client/AuthBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/AuthBtn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -46,23 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/lurker/Desktop/employease/app/components/client",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "swagger",
-    "ts.external.directory.path": "/Users/lurker/Desktop/employease/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lurker/Desktop/employease/app/components/client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;swagger&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/lurker/Desktop/employease/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/components/client" />
@@ -72,11 +66,11 @@
       <recent name="$PROJECT_DIR$/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/api/vacancy/apply/[id]" />
       <recent name="$PROJECT_DIR$/app/api/vacancy/getById/[id]" />
       <recent name="$PROJECT_DIR$/app/components/server" />
       <recent name="$PROJECT_DIR$/app/components/client" />
       <recent name="$PROJECT_DIR$/app/api/vacancy/create" />
-      <recent name="$PROJECT_DIR$/app/api/auth/register" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -97,7 +91,8 @@
       <workItem from="1703557239483" duration="19563000" />
       <workItem from="1703634473682" duration="611000" />
       <workItem from="1703635624284" duration="6047000" />
-      <workItem from="1703679804024" duration="43077000" />
+      <workItem from="1703679804024" duration="44878000" />
+      <workItem from="1704144972751" duration="1160000" />
     </task>
     <servers />
   </component>
