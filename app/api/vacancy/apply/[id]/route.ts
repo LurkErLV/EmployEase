@@ -32,6 +32,20 @@ export async function POST(req: Request, { params }: Params) {
     );
   }
 
+  const foundApply = await prisma.applies.findFirst({
+    where: {
+      userId: parseInt(session.user.id),
+      vacancyId: vacancy.id
+    }
+  });
+
+  if (foundApply) {
+    return NextResponse.json(
+        { ok: false, message: 'User already applied' },
+        { status: 409 },
+    );
+  }
+
   const createdApply = await prisma.applies.create({
     data: {
       vacancyId: parseInt(params.id),

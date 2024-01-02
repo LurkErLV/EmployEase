@@ -40,9 +40,16 @@ model Vacancies {
 }
 
 model Applies {
-  id        Int @id @default(autoincrement())
+  id        Int    @id @default(autoincrement())
   vacancyId Int
   userId    Int
+  status    Status @default(Waiting)
+}
+
+enum Status {
+  Waiting
+  Approved
+  Rejected
 }
 
 enum Role {

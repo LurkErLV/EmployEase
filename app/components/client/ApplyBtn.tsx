@@ -1,12 +1,14 @@
 "use client"
 
 import {toast} from "react-toastify";
+import {useRouter} from "next/navigation";
 
 interface Params {
     id: string
 }
 
 export default function ApplyBtn(params: Params) {
+    const router = useRouter();
     async function applyVacancy() {
         const res = await (await fetch("http://192.168.1.163:3000/api/vacancy/apply/" + params.id, {
             method: "POST"
@@ -34,6 +36,8 @@ export default function ApplyBtn(params: Params) {
                 progress: undefined,
                 theme: 'light',
             });
+
+            router.refresh();
         }
 
         console.log(res)
