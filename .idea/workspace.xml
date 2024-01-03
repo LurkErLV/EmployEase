@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/vacancy/apply/delete/[id]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/vacancy/apply/getAll/[id]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/client/DeleteApply.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240102023915_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/client/ApplyBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/ApplyBtn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +93,7 @@
       <workItem from="1703634473682" duration="611000" />
       <workItem from="1703635624284" duration="6047000" />
       <workItem from="1703679804024" duration="44878000" />
-      <workItem from="1704144972751" duration="14849000" />
+      <workItem from="1704144972751" duration="16360000" />
     </task>
     <servers />
   </component>

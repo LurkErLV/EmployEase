@@ -12,14 +12,15 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
   password  String
   name      String?
   surname   String?
-  Role      Role     @default(Employee)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  Role      Role      @default(Employee)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now()) @updatedAt
+  applies   Applies[]
 }
 
 model Vacancies {
@@ -44,6 +45,7 @@ model Applies {
   vacancyId Int
   userId    Int
   status    Status @default(Waiting)
+  User      User   @relation(fields: [userId], references: [id])
 }
 
 enum Status {
