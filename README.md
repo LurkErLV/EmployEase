@@ -1,9 +1,6 @@
 # Employease
 
-Hey there! Employease is my passion project—a web app designed to make job hunting way less stressful. It's like your
-personal job-search sidekick! This platform helps you find awesome job opportunities, apply to them hassle-free, and
-keep tabs on your application status. Plus, it's not just for us job seekers—I've also built a space for employers to
-post openings and check out applications.
+Hey there! Employease is my pet project, a web app for job hunting with functionality for candidate who is seeking for vacancy and for employer who is seeking for employee. App is very raw, but at the same time it has implemented all main functions for both candidate and employer.
 
 ## Installation
 
@@ -13,18 +10,9 @@ To install Employease, follow these steps:
 2. Install the dependencies: `yarn`
 3. Start the server: `yarn start`
 
-## Usage
-
-To use Employease, follow these steps:
-
-1. Open your web browser and navigate to `http://localhost:3000`.
-2. Sign up for an account or log in if you already have one.
-3. Search for jobs by entering keywords, location, or job title.
-4. Apply for jobs that match your skills and experience.
-
 ## Credits
 
-Employease was created by LurkErLV.
+Employease was created by Alberts Matrozis.
 
 ## License
 
