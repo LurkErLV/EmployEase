@@ -13,9 +13,12 @@ export default function ApplyBtn(params: Params) {
 
   async function applyVacancy() {
     const res = await (
-      await fetch('http://192.168.1.163:3000/api/vacancy/apply/' + params.id, {
-        method: 'POST',
-      })
+      await fetch(
+        'http://192.168.1.163:3000/api/vacancy/application/' + params.id,
+        {
+          method: 'POST',
+        },
+      )
     ).json();
 
     if (!res.ok) {

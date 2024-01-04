@@ -1,24 +1,17 @@
-/*
-  Warnings:
+-- CreateTable
+CREATE TABLE `User` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `email` VARCHAR(191) NOT NULL,
+    `password` VARCHAR(191) NOT NULL,
+    `name` VARCHAR(191) NULL,
+    `surname` VARCHAR(191) NULL,
+    `Role` ENUM('Admin', 'Employee', 'Employer') NOT NULL DEFAULT 'Employee',
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
-  - You are about to drop the `Applies` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Vacancies` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropForeignKey
-ALTER TABLE `Applies` DROP FOREIGN KEY `Applies_userId_fkey`;
-
--- DropForeignKey
-ALTER TABLE `Applies` DROP FOREIGN KEY `Applies_vacancyId_fkey`;
-
--- DropForeignKey
-ALTER TABLE `Vacancies` DROP FOREIGN KEY `Vacancies_authorId_fkey`;
-
--- DropTable
-DROP TABLE `Applies`;
-
--- DropTable
-DROP TABLE `Vacancies`;
+    UNIQUE INDEX `User_email_key`(`email`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
 CREATE TABLE `Vacancy` (
@@ -39,7 +32,7 @@ CREATE TABLE `Vacancy` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Appllication` (
+CREATE TABLE `Application` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `vacancyId` INTEGER NOT NULL,
     `userId` INTEGER NOT NULL,
@@ -52,7 +45,7 @@ CREATE TABLE `Appllication` (
 ALTER TABLE `Vacancy` ADD CONSTRAINT `Vacancy_authorId_fkey` FOREIGN KEY (`authorId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Appllication` ADD CONSTRAINT `Appllication_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Application` ADD CONSTRAINT `Application_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Appllication` ADD CONSTRAINT `Appllication_vacancyId_fkey` FOREIGN KEY (`vacancyId`) REFERENCES `Vacancy`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Application` ADD CONSTRAINT `Application_vacancyId_fkey` FOREIGN KEY (`vacancyId`) REFERENCES `Vacancy`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

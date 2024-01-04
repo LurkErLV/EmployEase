@@ -67,15 +67,19 @@ export const authOptions = {
     session: async ({ session, token }: any) => {
       if (!token.email) return null;
 
-      const user = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
-        include: {
-          application: true,
-          vacancies: true,
-        },
-      });
+      const user = await prisma.user
+        .findFirst({
+          where: {
+            email: token.email,
+          },
+          include: {
+            application: true,
+            vacancies: true,
+          },
+        })
+        .finally(() => {
+          prisma.$disconnect();
+        });
 
       if (!user) return null;
 

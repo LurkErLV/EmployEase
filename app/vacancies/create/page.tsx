@@ -82,6 +82,7 @@ export default function page() {
       .then((res) => res.json())
       .then((res) => {
         notify('success', `Created new vacancy with ${res.newVacancy.id} Id`);
+        router.refresh();
         router.push('/vacancies/' + res.newVacancy.id);
       })
       .catch((_) => {

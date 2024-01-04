@@ -3,18 +3,21 @@ import { NextResponse } from 'next/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 export async function GET(req: Request, { params }: Params) {
-  const vacancy = await prisma.vacancy
-    .findFirst({
+  const applications = await prisma.application
+    .findMany({
       where: {
-        id: parseInt(params.id),
+        vacancyId: parseInt(params.id),
+      },
+      select: {
+        id: true,
+        status: true,
+        User: true,
+        Vacancy: true,
       },
     })
     .finally(() => {
       prisma.$disconnect();
     });
 
-  if (!vacancy) {
-    return NextResponse.json({}, { status: 400 });
-  }
-  return NextResponse.json({ vacancy }, { status: 200 });
+  return NextResponse.json({ ok: true, applications }, { status: 200 });
 }

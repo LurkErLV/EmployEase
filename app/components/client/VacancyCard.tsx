@@ -24,7 +24,7 @@ type Vacancy = {
 
 type Props = {
   item: Vacancy;
-  type: string | undefined;
+  type?: string;
 };
 
 export default function VacancyCard(props: Props) {

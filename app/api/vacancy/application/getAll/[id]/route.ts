@@ -3,11 +3,15 @@ import { NextResponse } from 'next/server';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 export async function GET(req: Request, { params }: Params) {
-  const allApplication = await prisma.application.findMany({
-    where: {
-      userId: parseInt(params.id),
-    },
-  });
+  const allApplication = await prisma.application
+    .findMany({
+      where: {
+        userId: parseInt(params.id),
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   if (!allApplication) {
     return NextResponse.json({ message: 'Nothing was found' }, { status: 404 });
@@ -17,13 +21,17 @@ export async function GET(req: Request, { params }: Params) {
     return item.vacancyId;
   });
 
-  const vacancies = await prisma.vacancy.findMany({
-    where: {
-      id: {
-        in: ids,
+  const vacancies = await prisma.vacancy
+    .findMany({
+      where: {
+        id: {
+          in: ids,
+        },
       },
-    },
-  });
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   return NextResponse.json({ allApplication, vacancies }, { status: 200 });
 }

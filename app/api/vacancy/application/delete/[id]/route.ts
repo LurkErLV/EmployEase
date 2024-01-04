@@ -12,11 +12,15 @@ export async function DELETE(req: Request, { params }: Params) {
       { status: 401 },
     );
 
-  const apply = await prisma.application.findFirst({
-    where: {
-      id: parseInt(params.id),
-    },
-  });
+  const apply = await prisma.application
+    .findFirst({
+      where: {
+        id: parseInt(params.id),
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   if (!apply) {
     return NextResponse.json(
@@ -27,7 +31,7 @@ export async function DELETE(req: Request, { params }: Params) {
 
   if (apply.userId.toString() !== session.user.id.toString()) {
     return NextResponse.json(
-      { ok: false, message: 'User is not owner of apply' },
+      { ok: false, message: 'User is not owner of application' },
       { status: 403 },
     );
   }
@@ -40,6 +44,9 @@ export async function DELETE(req: Request, { params }: Params) {
     })
     .catch((e) => {
       return console.log(e);
+    })
+    .finally(() => {
+      prisma.$disconnect();
     });
 
   return NextResponse.json(

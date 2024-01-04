@@ -41,19 +41,23 @@ export async function POST(req: Request, res: NextApiResponse) {
     );
   }
 
-  const newVacancy = await prisma.vacancy.create({
-    data: {
-      title,
-      company,
-      companyLogo: companyLogo ? companyLogo : '',
-      workSchedule,
-      minSalary,
-      maxSalary,
-      location,
-      description,
-      authorId: parseInt(session.user.id),
-    },
-  });
+  const newVacancy = await prisma.vacancy
+    .create({
+      data: {
+        title,
+        company,
+        companyLogo: companyLogo ? companyLogo : '',
+        workSchedule,
+        minSalary,
+        maxSalary,
+        location,
+        description,
+        authorId: parseInt(session.user.id),
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   return NextResponse.json({ newVacancy }, { status: 200 });
 }

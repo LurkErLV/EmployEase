@@ -12,11 +12,15 @@ export async function POST(req: Request, { params }: Params) {
       { status: 401 },
     );
 
-  const vacancy = await prisma.vacancy.findFirst({
-    where: {
-      id: parseInt(params.id),
-    },
-  });
+  const vacancy = await prisma.vacancy
+    .findFirst({
+      where: {
+        id: parseInt(params.id),
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   if (!vacancy) {
     return NextResponse.json(
@@ -32,12 +36,16 @@ export async function POST(req: Request, { params }: Params) {
     );
   }
 
-  const foundApply = await prisma.application.findFirst({
-    where: {
-      userId: parseInt(session.user.id),
-      vacancyId: vacancy.id,
-    },
-  });
+  const foundApply = await prisma.application
+    .findFirst({
+      where: {
+        userId: parseInt(session.user.id),
+        vacancyId: vacancy.id,
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   if (foundApply) {
     return NextResponse.json(
@@ -46,12 +54,16 @@ export async function POST(req: Request, { params }: Params) {
     );
   }
 
-  const createdApply = await prisma.application.create({
-    data: {
-      vacancyId: parseInt(params.id),
-      userId: parseInt(session.user.id),
-    },
-  });
+  const createdApply = await prisma.application
+    .create({
+      data: {
+        vacancyId: parseInt(params.id),
+        userId: parseInt(session.user.id),
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   if (createdApply) {
     return NextResponse.json({ ok: true }, { status: 200 });

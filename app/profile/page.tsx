@@ -9,7 +9,8 @@ export default async function page() {
 
   const res = await (
     await fetch(
-      'http://192.168.1.163:3000/api/vacancy/apply/getAll/' + session.user.id,
+      'http://192.168.1.163:3000/api/vacancy/application/getAll/' +
+        session.user.id,
       {
         method: 'GET',
       },
