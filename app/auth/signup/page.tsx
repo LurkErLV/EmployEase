@@ -5,6 +5,7 @@ import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import notify from '@/utils/toast';
 
 export default function SignUnPage() {
   const router = useRouter();
@@ -21,6 +22,7 @@ export default function SignUnPage() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!email || !password) {
       return;
     }
@@ -32,16 +34,7 @@ export default function SignUnPage() {
     ).json();
 
     if (!res.ok) {
-      return toast.error(res.message, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      return notify('error', res.message);
     } else {
       const signInResponse = await signIn('credentials', {
         email,
@@ -51,16 +44,7 @@ export default function SignUnPage() {
       });
 
       if (signInResponse && signInResponse.error) {
-        return toast.error(signInResponse.error, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
+        return notify('error', signInResponse.error);
       }
     }
   };

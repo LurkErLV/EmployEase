@@ -1,6 +1,9 @@
 # Employease
 
-Hey there! Employease is my passion project—a web app designed to make job hunting way less stressful. It's like your personal job-search sidekick! This platform helps you find awesome job opportunities, apply to them hassle-free, and keep tabs on your application status. Plus, it's not just for us job seekers—I've also built a space for employers to post openings and check out applications.
+Hey there! Employease is my passion project—a web app designed to make job hunting way less stressful. It's like your
+personal job-search sidekick! This platform helps you find awesome job opportunities, apply to them hassle-free, and
+keep tabs on your application status. Plus, it's not just for us job seekers—I've also built a space for employers to
+post openings and check out applications.
 
 ## Installation
 
@@ -27,4 +30,5 @@ Employease was created by LurkErLV.
 
 Employease is licensed under the MIT License. See `LICENSE` for more information.
 
-Feel free to modify this according to your preferences or if there are additional sections or information you'd like to add!
+Feel free to modify this according to your preferences or if there are additional sections or information you'd like to
+add!

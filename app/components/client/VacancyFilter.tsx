@@ -2,7 +2,7 @@
 
 import VacancyCard from '@/app/components/client/VacancyCard';
 import { Vacancy } from '@/types/vacancy';
-import { ChangeEvent, ChangeEventHandler, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 type Props = {
   vacancies: Vacancy[];

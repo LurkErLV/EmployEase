@@ -1,30 +1,29 @@
-import prisma from "@/utils/db";
-import {NextResponse} from 'next/server';
-import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
+import prisma from '@/utils/db';
+import { NextResponse } from 'next/server';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
-export async function GET(req: Request, {params}: Params) {
+export async function GET(req: Request, { params }: Params) {
+  const allApplication = await prisma.application.findMany({
+    where: {
+      userId: parseInt(params.id),
+    },
+  });
 
-    const allApplies = await prisma.applies.findMany({
-        where: {
-            userId: parseInt(params.id)
-        }
-    });
+  if (!allApplication) {
+    return NextResponse.json({ message: 'Nothing was found' }, { status: 404 });
+  }
 
-    if (!allApplies) {
-        return NextResponse.json({message: "Nothing was found"}, {status: 404});
-    }
+  const ids = allApplication.map((item) => {
+    return item.vacancyId;
+  });
 
-    const ids = allApplies.map((item) => {
-        return item.vacancyId;
-    });
+  const vacancies = await prisma.vacancy.findMany({
+    where: {
+      id: {
+        in: ids,
+      },
+    },
+  });
 
-    const vacancies = await prisma.vacancies.findMany({
-        where: {
-            id: {
-                in: ids
-            }
-        }
-    });
-
-    return NextResponse.json({allApplies, vacancies}, {status: 200});
+  return NextResponse.json({ allApplication, vacancies }, { status: 200 });
 }

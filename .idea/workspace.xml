@@ -5,7 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e7022d-cee5-47ac-a96f-c602602e0b59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/client/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240103221453_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240103221808_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240103230901_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240104005157_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240104005807_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/formatMoney.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/formatWorkSchedule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/toast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/auth/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/register/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/apply/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/apply/delete/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/apply/delete/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/apply/getAll/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/apply/getAll/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/create/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/getAll/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/vacancy/getById/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/vacancy/getById/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/ApplyBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/ApplyBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/DeleteApply.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/DeleteApply.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/VacancyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/client/VacancyFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/client/VacancyFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vacancies/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/vacancies/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vacancies/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/vacancies/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231219224039_/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20231219224039_/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/next-auth.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/next-auth.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/authOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/authOptions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +53,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -65,11 +102,11 @@
       <recent name="$PROJECT_DIR$/layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/components/client" />
       <recent name="$PROJECT_DIR$/app/api/vacancy/apply/getAll/[id]" />
       <recent name="$PROJECT_DIR$/app/api/apply" />
       <recent name="$PROJECT_DIR$/app/api/profile" />
       <recent name="$PROJECT_DIR$/app/api/vacancy/apply/[id]" />
-      <recent name="$PROJECT_DIR$/app/api/vacancy/getById/[id]" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -91,7 +128,7 @@
       <workItem from="1703634473682" duration="611000" />
       <workItem from="1703635624284" duration="6047000" />
       <workItem from="1703679804024" duration="44878000" />
-      <workItem from="1704144972751" duration="17192000" />
+      <workItem from="1704144972751" duration="29637000" />
     </task>
     <servers />
   </component>

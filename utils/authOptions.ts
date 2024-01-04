@@ -22,11 +22,19 @@ export const authOptions = {
           password: string;
         };
 
-        const user = await prisma.user.findFirst({
-          where: {
-            email: email,
-          },
-        });
+        const user = await prisma.user
+          .findFirst({
+            where: {
+              email: email,
+            },
+            include: {
+              application: true,
+              vacancies: true,
+            },
+          })
+          .finally(() => {
+            prisma.$disconnect();
+          });
 
         if (!user) {
           throw new Error('User not found!');
@@ -42,7 +50,8 @@ export const authOptions = {
           name: user.name,
           surname: user.surname,
           role: user.Role,
-          applies: user.applies,
+          application: user.application,
+          vacancies: user.vacancies,
         };
       },
     }),
@@ -62,6 +71,10 @@ export const authOptions = {
         where: {
           email: token.email,
         },
+        include: {
+          application: true,
+          vacancies: true,
+        },
       });
 
       if (!user) return null;
@@ -72,7 +85,8 @@ export const authOptions = {
         name: user.name,
         surname: user.surname,
         role: user.Role,
-        applies: user.applies,
+        application: user.application,
+        vacancies: user.vacancies,
       };
 
       return session;

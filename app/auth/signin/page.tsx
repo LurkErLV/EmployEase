@@ -3,8 +3,8 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import notify from '@/utils/toast';
 
 export default function SignInPage() {
   const router = useRouter();
@@ -32,18 +32,8 @@ export default function SignInPage() {
     });
 
     if (res && res.error) {
-      return toast.error(res.error, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      return notify('error', res.error);
     }
-    console.log(res);
   };
 
   return (
@@ -93,7 +83,7 @@ export default function SignInPage() {
             {' '}
             Don&apos;t have an account?{' '}
             <Link
-              href="/auth/route"
+              href="/auth/signup"
               className="font-medium text-blue-600 hover:underline">
               Sign up
             </Link>

@@ -40,7 +40,7 @@ export default function Navbar(props: Props) {
         }`}>
         <div className="relative max-md:flex-col max-md:my-5 w-full max-w-[1140px] mx-5 flex justify-between items-center transition">
           <div className="max-md:flex max-md:justify-between max-md:w-full">
-            <Link className="text-2xl font-medium" href="/">
+            <Link className="text-2xl font-medium" href="/public">
               EmployEase
             </Link>
             <button
@@ -81,7 +81,7 @@ export default function Navbar(props: Props) {
             } ${
               isOpen ? 'max-md:translate-x-0' : 'max-md:translate-x-[-100%]'
             } max-md:w-[100vw] max-md:duration-500 max-md:top-7 max-md:py-5 max-md:absolute max-md:flex-col max-md:my-5 flex items-center gap-5 transition`}>
-            <Link className="hover:opacity-60 transition" href="/">
+            <Link className="hover:opacity-60 transition" href="/public">
               Home
             </Link>
             <Link className="hover:opacity-60 transition" href="/vacancies">

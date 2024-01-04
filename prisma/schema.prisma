@@ -12,18 +12,19 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
-  email     String    @unique
-  password  String
-  name      String?
-  surname   String?
-  Role      Role      @default(Employee)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @default(now()) @updatedAt
-  applies   Applies[]
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
+  password    String
+  name        String?
+  surname     String?
+  Role        Role          @default(Employee)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
+  application Application[]
+  vacancies   Vacancy[]
 }
 
-model Vacancies {
+model Vacancy {
   id Int @id @default(autoincrement())
 
   title        String
@@ -35,17 +36,20 @@ model Vacancies {
   location     String
   description  String       @db.VarChar(10000)
 
-  authorId  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
+  authorId    Int
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
+  User        User          @relation(fields: [authorId], references: [id])
+  application Application[]
 }
 
-model Applies {
-  id        Int    @id @default(autoincrement())
+model Application {
+  id        Int     @id @default(autoincrement())
   vacancyId Int
   userId    Int
-  status    Status @default(Waiting)
-  User      User   @relation(fields: [userId], references: [id])
+  status    Status  @default(Waiting)
+  User      User    @relation(fields: [userId], references: [id])
+  Vacancies Vacancy @relation(fields: [vacancyId], references: [id])
 }
 
 enum Status {

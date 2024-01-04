@@ -12,7 +12,7 @@ export async function POST(req: Request, { params }: Params) {
       { status: 401 },
     );
 
-  const vacancy = await prisma.vacancies.findFirst({
+  const vacancy = await prisma.vacancy.findFirst({
     where: {
       id: parseInt(params.id),
     },
@@ -32,21 +32,21 @@ export async function POST(req: Request, { params }: Params) {
     );
   }
 
-  const foundApply = await prisma.applies.findFirst({
+  const foundApply = await prisma.application.findFirst({
     where: {
       userId: parseInt(session.user.id),
-      vacancyId: vacancy.id
-    }
+      vacancyId: vacancy.id,
+    },
   });
 
   if (foundApply) {
     return NextResponse.json(
-        { ok: false, message: 'User already applied' },
-        { status: 409 },
+      { ok: false, message: 'User already applied' },
+      { status: 409 },
     );
   }
 
-  const createdApply = await prisma.applies.create({
+  const createdApply = await prisma.application.create({
     data: {
       vacancyId: parseInt(params.id),
       userId: parseInt(session.user.id),

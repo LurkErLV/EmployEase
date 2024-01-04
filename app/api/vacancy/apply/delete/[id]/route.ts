@@ -12,36 +12,38 @@ export async function DELETE(req: Request, { params }: Params) {
       { status: 401 },
     );
 
-  const apply = await prisma.applies.findFirst({
+  const apply = await prisma.application.findFirst({
     where: {
-      id: parseInt(params.id)
-    }
+      id: parseInt(params.id),
+    },
   });
 
   if (!apply) {
     return NextResponse.json(
-        { ok: false, message: 'Apply not found' },
-        { status: 404 },
+      { ok: false, message: 'Apply not found' },
+      { status: 404 },
     );
   }
 
   if (apply.userId.toString() !== session.user.id.toString()) {
     return NextResponse.json(
-        { ok: false, message: 'User is not owner of apply' },
-        { status: 403 },
+      { ok: false, message: 'User is not owner of apply' },
+      { status: 403 },
     );
   }
 
-  const res = await prisma.applies.delete({
-    where: {
-      id: parseInt(params.id)
-    }
-  }).catch((e) => {
-    return console.log(e);
-  });
+  const res = await prisma.application
+    .delete({
+      where: {
+        id: parseInt(params.id),
+      },
+    })
+    .catch((e) => {
+      return console.log(e);
+    });
 
   return NextResponse.json(
-      { ok: true, message: 'Apply successfully deleted' },
-      { status: 200 },
+    { ok: true, message: 'Apply successfully deleted' },
+    { status: 200 },
   );
 }

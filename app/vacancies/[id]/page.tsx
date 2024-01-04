@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import ApplyBtn from "@/app/components/client/ApplyBtn";
+import ApplyBtn from '@/app/components/client/ApplyBtn';
+import formatWorkSchedule from '@/utils/formatWorkSchedule';
+import formatMoney from '@/utils/formatMoney';
 
 export default async function page({ params }: { params: { id: string } }) {
   const vacancy = (
@@ -7,27 +9,6 @@ export default async function page({ params }: { params: { id: string } }) {
       await fetch('http://192.168.1.163:3000/api/vacancy/getById/' + params.id)
     ).json()
   ).vacancy;
-
-  function formatWorkSchedule(workSchedule: string) {
-    switch (workSchedule) {
-      case 'FULLTIME':
-        return 'Full-Time';
-      case 'PARTTIME':
-        return 'Part-Time';
-      case 'INTERNSHIP':
-        return 'Internship';
-      default:
-        return 'Error';
-    }
-  }
-
-  function formatMoney(money: number) {
-    return money.toLocaleString('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    });
-  }
 
   return (
     <>
@@ -59,7 +40,7 @@ export default async function page({ params }: { params: { id: string } }) {
               </div>
             </div>
 
-          <ApplyBtn id={params.id}/>
+            <ApplyBtn id={params.id} />
           </div>
 
           <div className="flex justify-between mt-8 gap-12 max-xl:flex-col-reverse max-xl:items-center">

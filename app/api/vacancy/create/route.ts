@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth';
 import prisma from '@/utils/db';
 import { authOptions } from '@/utils/authOptions';
-import { NextRequest, NextResponse } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
+import { NextApiResponse } from 'next';
 
 export async function POST(req: Request, res: NextApiResponse) {
   const session = await getServerSession(authOptions);
@@ -41,7 +41,7 @@ export async function POST(req: Request, res: NextApiResponse) {
     );
   }
 
-  const newVacancy = await prisma.vacancies.create({
+  const newVacancy = await prisma.vacancy.create({
     data: {
       title,
       company,

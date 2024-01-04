@@ -4,7 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
-import Navbar from '@/app/components/Navbar';
+import Navbar from '@/app/components/client/Navbar';
 import NextAuthProvider from '@/app/components/client/NextAuthProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/utils/authOptions';

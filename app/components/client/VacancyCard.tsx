@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import formatWorkSchedule from '@/utils/formatWorkSchedule';
+import formatMoney from '@/utils/formatMoney';
 
 type Vacancy = {
   id: number;
@@ -22,34 +24,19 @@ type Vacancy = {
 
 type Props = {
   item: Vacancy;
+  type: string | undefined;
 };
 
 export default function VacancyCard(props: Props) {
-  function formatWorkSchedule(workSchedule: string) {
-    switch (workSchedule) {
-      case 'FULLTIME':
-        return 'Full-Time';
-      case 'PARTTIME':
-        return 'Part-Time';
-      case 'INTERNSHIP':
-        return 'Internship';
-      default:
-        return 'Error';
-    }
-  }
-
-  function formatMoney(money: number) {
-    return money.toLocaleString('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    });
-  }
+  const link =
+    props.type === 'employer'
+      ? '/employer/vacancies/' + props.item.id
+      : '/vacancies/' + props.item.id;
 
   return (
     <>
       <Link
-        href={'/vacancies/' + props.item.id}
+        href={link}
         className="max-w-[372px] min-w-[300px] w-full border-2 border-[#E4E5E8] rounded-md bg-white flex flex-col p-6 hover:scale-110 transition">
         <h1 className="text-gray-900 text-lg font-medium mb-1.5">
           {props.item.title}

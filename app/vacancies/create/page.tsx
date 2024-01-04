@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { toast } from 'react-toastify';
+import notify from '@/utils/toast';
 
 const ReactQuill = dynamic(() => import('react-quill'), {
   ssr: false,
@@ -18,30 +18,12 @@ export default function page() {
   useEffect(() => {
     if (status === 'authenticated') {
       if (data?.user.role === 'Employee') {
-        toast.error('Permission denied', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
-        router.push('/');
+        notify('error', 'Permission denied');
+        return router.push('/');
       }
     } else if (status === 'unauthenticated') {
-      toast.error('Permission denied', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
-      router.push('/');
+      notify('error', 'Permission denied');
+      return router.push('/');
     }
   }, [status]);
 
@@ -88,16 +70,7 @@ export default function page() {
       !formValues.location ||
       !formValues.description
     ) {
-      return toast.error('Fill all required inputs', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      return notify('error', 'Fill all required inputs');
     }
     await fetch('http://192.168.1.163:3000/api/vacancy/create', {
       method: 'POST',
@@ -108,30 +81,11 @@ export default function page() {
     })
       .then((res) => res.json())
       .then((res) => {
-        toast.success(`Created new vacancy with ${res.newVacancy.id} Id`, {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
+        notify('success', `Created new vacancy with ${res.newVacancy.id} Id`);
         router.push('/vacancies/' + res.newVacancy.id);
       })
-      .catch((e) => {
-        toast.error('Something went wrong!', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-        });
-        console.log(e);
+      .catch((_) => {
+        notify('error', 'Something went wrong!');
       });
   }
 
