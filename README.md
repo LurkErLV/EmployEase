@@ -8,7 +8,7 @@ To install Employease, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/LurkErLV/employease.git`
 2. Install the dependencies: `yarn`
-3. Start the server: `yarn start`
+3. Start the server: `yarn dev`
 
 ## Credits
 
