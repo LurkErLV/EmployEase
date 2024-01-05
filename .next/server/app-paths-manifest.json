@@ -1,0 +1,23 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/profile/vacancies/[id]/route": "app/api/profile/vacancies/[id]/route.js",
+  "/api/profile/vacancies/route": "app/api/profile/vacancies/route.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js",
+  "/api/vacancy/application/[id]/route": "app/api/vacancy/application/[id]/route.js",
+  "/api/vacancy/application/delete/[id]/route": "app/api/vacancy/application/delete/[id]/route.js",
+  "/api/vacancy/application/getAll/[id]/route": "app/api/vacancy/application/getAll/[id]/route.js",
+  "/api/vacancy/create/route": "app/api/vacancy/create/route.js",
+  "/api/vacancy/getAll/route": "app/api/vacancy/getAll/route.js",
+  "/api/vacancy/getById/[id]/route": "app/api/vacancy/getById/[id]/route.js",
+  "/api/vacancy/application/changeStatus/[id]/route": "app/api/vacancy/application/changeStatus/[id]/route.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/profile/vacancies/[id]/page": "app/profile/vacancies/[id]/page.js",
+  "/vacancies/[id]/page": "app/vacancies/[id]/page.js",
+  "/vacancies/create/page": "app/vacancies/create/page.js",
+  "/profile/vacancies/page": "app/profile/vacancies/page.js",
+  "/vacancies/page": "app/vacancies/page.js",
+  "/auth/signin/page": "app/auth/signin/page.js"
+}

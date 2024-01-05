@@ -12,7 +12,7 @@ export default async function page({ params }: { params: { id: string } }) {
 
   const res = await (
     await fetch(
-      'http://192.168.1.163:3000/api/profile/vacancies/' + params.id,
+      'https://employease.matrozis.dev/api/profile/vacancies/' + params.id,
       {
         method: 'GET',
         headers: headers(),

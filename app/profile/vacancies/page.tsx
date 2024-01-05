@@ -11,7 +11,7 @@ export default async function page() {
   }
 
   const res = await (
-    await fetch('http://192.168.1.163:3000/api/profile/vacancies', {
+    await fetch('https://employease.matrozis.dev/api/profile/vacancies', {
       method: 'GET',
       headers: headers(),
     })

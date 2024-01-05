@@ -72,7 +72,7 @@ export default function page() {
     ) {
       return notify('error', 'Fill all required inputs');
     }
-    await fetch('http://192.168.1.163:3000/api/vacancy/create', {
+    await fetch('https://employease.matrozis.dev/api/vacancy/create', {
       method: 'POST',
       body: JSON.stringify(formValues),
       headers: {

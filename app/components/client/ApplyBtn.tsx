@@ -14,7 +14,7 @@ export default function ApplyBtn(params: Params) {
   async function applyVacancy() {
     const res = await (
       await fetch(
-        'http://192.168.1.163:3000/api/vacancy/application/' + params.id,
+        'https://employease.matrozis.dev/api/vacancy/application/' + params.id,
         {
           method: 'POST',
         },

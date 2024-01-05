@@ -6,7 +6,7 @@ import formatMoney from '@/utils/formatMoney';
 export default async function page({ params }: { params: { id: string } }) {
   const vacancy = (
     await (
-      await fetch('http://192.168.1.163:3000/api/vacancy/getById/' + params.id)
+      await fetch('https://employease.matrozis.dev/api/vacancy/getById/' + params.id)
     ).json()
   ).vacancy;
 

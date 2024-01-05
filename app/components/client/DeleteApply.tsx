@@ -13,7 +13,7 @@ export default function DeleteApplyBtn(props: Props) {
   async function deleteApply() {
     const res = await (
       await fetch(
-        'http://192.168.1.163:3000/api/vacancy/application/delete/' + props.id,
+        'https://employease.matrozis.dev/api/vacancy/application/delete/' + props.id,
         {
           method: 'DELETE',
         },

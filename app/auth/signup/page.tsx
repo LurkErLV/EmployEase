@@ -27,7 +27,7 @@ export default function SignUnPage() {
       return;
     }
     const res = await (
-      await fetch('http://192.168.1.163:3000/api/auth/register', {
+      await fetch('https://employease.matrozis.dev/api/auth/register', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       })
