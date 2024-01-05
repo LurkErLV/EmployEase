@@ -17,15 +17,6 @@
       "static/css/c855f3cb8c5dbe09.css",
       "static/chunks/app/layout-3bd7d831c28c081a.js"
     ],
-    "/auth/signin/page": [
-      "static/chunks/webpack-46146d361ed6922e.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-8ef8f74b9bf8d233.js",
-      "static/chunks/250-e3db70cd67721be2.js",
-      "static/chunks/745-b4efcfd66fabebb5.js",
-      "static/chunks/app/auth/signin/page-6d8bf96e3b9835c6.js"
-    ],
     "/auth/signup/page": [
       "static/chunks/webpack-46146d361ed6922e.js",
       "static/chunks/fd9d1056-516b58327fb05db5.js",
@@ -34,6 +25,15 @@
       "static/chunks/250-e3db70cd67721be2.js",
       "static/chunks/745-b4efcfd66fabebb5.js",
       "static/chunks/app/auth/signup/page-f3070d5224cdb7ee.js"
+    ],
+    "/auth/signin/page": [
+      "static/chunks/webpack-46146d361ed6922e.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-8ef8f74b9bf8d233.js",
+      "static/chunks/250-e3db70cd67721be2.js",
+      "static/chunks/745-b4efcfd66fabebb5.js",
+      "static/chunks/app/auth/signin/page-6d8bf96e3b9835c6.js"
     ],
     "/page": [
       "static/chunks/webpack-46146d361ed6922e.js",
@@ -51,6 +51,13 @@
       "static/chunks/main-app-8ef8f74b9bf8d233.js",
       "static/chunks/app/profile/page-d64f13a5618d2c9b.js"
     ],
+    "/profile/vacancies/[id]/page": [
+      "static/chunks/webpack-46146d361ed6922e.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-8ef8f74b9bf8d233.js",
+      "static/chunks/app/profile/vacancies/[id]/page-4fa7e51c359a7595.js"
+    ],
     "/profile/vacancies/page": [
       "static/chunks/webpack-46146d361ed6922e.js",
       "static/chunks/fd9d1056-516b58327fb05db5.js",
@@ -66,13 +73,6 @@
       "static/chunks/main-app-8ef8f74b9bf8d233.js",
       "static/chunks/644-4e5e178b0b4a15a7.js",
       "static/chunks/app/vacancies/[id]/page-078172dd3eb93b37.js"
-    ],
-    "/profile/vacancies/[id]/page": [
-      "static/chunks/webpack-46146d361ed6922e.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-8ef8f74b9bf8d233.js",
-      "static/chunks/app/profile/vacancies/[id]/page-71f5a9034178d6ae.js"
     ],
     "/vacancies/create/page": [
       "static/chunks/webpack-46146d361ed6922e.js",
