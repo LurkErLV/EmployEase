@@ -7,7 +7,7 @@ type Props = {
 export default function SelectStatus({ status, id }: Props) {
   async function changeStatus(newStatus: string, id: number) {
     await fetch(
-      `http://192.168.1.163:3000/api/vacancy/application/changeStatus/${id}?status=${newStatus}`,
+      `https://employease.matrozis.dev/api/vacancy/application/changeStatus/${id}?status=${newStatus}`,
       {
         method: 'POST',
       },
