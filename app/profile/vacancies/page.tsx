@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/utils/authOptions';
 import { redirect } from 'next/navigation';
-import { headers } from 'next/headers';
 import Link from 'next/link';
+import prisma from '@/utils/db';
 
 export default async function page() {
   const session = await getServerSession(authOptions);
@@ -10,14 +10,23 @@ export default async function page() {
     return redirect('/');
   }
 
-  const res = await (
-    await fetch('https://employease.matrozis.dev/api/profile/vacancies', {
-      method: 'GET',
-      headers: headers(),
+  const vacancies = await prisma.vacancy
+    .findMany({
+      where: {
+        authorId: parseInt(session.user.id),
+      },
+      select: {
+        id: true,
+        title: true,
+        company: true,
+        location: true,
+        application: true,
+      },
     })
-  ).json();
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
-  console.log(res);
 
   return (
     <>
@@ -30,7 +39,7 @@ export default async function page() {
               </h1>
 
               <div className="flex flex-col gap-2">
-                {res.vacancies.map((item: any, i: number) => {
+                {vacancies.map((item: any, i: number) => {
                   return (
                     <Link
                       key={i}
