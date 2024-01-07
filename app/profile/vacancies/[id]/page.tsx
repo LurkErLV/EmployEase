@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/utils/authOptions';
 import { redirect } from 'next/navigation';
-import { headers } from 'next/headers';
 import SelectStatus from '@/app/components/client/SelectStatus';
+import prisma from '@/utils/db';
 
 export default async function page({ params }: { params: { id: string } }) {
   const session = await getServerSession(authOptions);
@@ -10,15 +10,21 @@ export default async function page({ params }: { params: { id: string } }) {
     return redirect('/');
   }
 
-  const res = await (
-    await fetch(
-      'https://employease.matrozis.dev/api/profile/vacancies/' + params.id,
-      {
-        method: 'GET',
-        headers: headers(),
+  const applications = await prisma.application
+    .findMany({
+      where: {
+        vacancyId: parseInt(params.id),
       },
-    )
-  ).json();
+      select: {
+        id: true,
+        status: true,
+        User: true,
+        Vacancy: true,
+      },
+    })
+    .finally(() => {
+      prisma.$disconnect();
+    });
 
   return (
     <>
@@ -34,7 +40,7 @@ export default async function page({ params }: { params: { id: string } }) {
             </tr>
           </thead>
           <tbody>
-            {res.applications.map((item: any, i: number) => {
+            {applications.map((item: any, i: number) => {
               return (
                 <tr key={i}>
                   <td className="border border-slate-500 p-2">
